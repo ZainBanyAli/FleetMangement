@@ -15,6 +15,7 @@ class Vehicle extends Model
 
       public function locations()
     {
-        return $this->hasMany(\App\Models\GpsLocation::class);
+          return $this->hasMany(\App\Models\GpsLocation::class, 'vehicle_id')
+                ->orderBy('timestamp');
     }
 }

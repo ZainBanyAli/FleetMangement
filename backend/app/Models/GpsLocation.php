@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class GpsLocation extends Model
 {
     protected $fillable = ['vehicle_id','latitude','longitude','timestamp'];
-    
+
      protected $casts = [
         'timestamp' => 'datetime',
+        'latitude'  => 'float',
+        'longitude' => 'float',
     ];
 
     public function vehicle()
