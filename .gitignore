@@ -1,0 +1,41 @@
+# ---- Global ----
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+frontend/.env.local
+!frontend/.env.local.example
+
+# IDE/editor
+.vscode/
+.idea/
+
+# ---- Node / Next.js ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+.pnpm-debug.log*
+.next/
+dist/
+coverage/
+
+# ---- Laravel / PHP ----
+backend/vendor/
+backend/storage/*.key
+backend/storage/app/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+backend/bootstrap/cache/*
+backend/public/storage
+backend/public/hot
+backend/public/build
+backend/.phpunit.result.cache
+
