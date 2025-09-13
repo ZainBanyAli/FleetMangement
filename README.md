@@ -124,3 +124,13 @@ npm run dev   # http://localhost:3000
 | PUT    | `/vehicles/:id`     | Update a vehicle (Requires JWT)                    |
 | DELETE | `/vehicles/:id`     | Delete a vehicle (Requires JWT)                    |
 
+
+
+### GPS Endpoints
+**Base URL:** `http://127.0.0.1:8000/api`
+
+| Method | Endpoint                   | Description                                 |
+|-------:|----------------------------|---------------------------------------------|
+| POST   | `/vehicles/:id/locations`  | Add a GPS point (lat/lon) (Requires JWT)    |
+| GET    | `/vehicles/:id/locations`  | Get GPS history for a vehicle (Requires JWT) |
+
