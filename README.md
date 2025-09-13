@@ -20,7 +20,7 @@ A basic fleet management system where users can log in, manage vehicles, submit 
 
 - `/fleet-management`
   - `backend/` – **Laravel API**
-    - `app/` – Application code
+    - `app/` 
       - `Http/Controllers/` – API controllers  
         - `AuthController.php` – register/login (JWT)  
         - `VehicleController.php` – vehicles CRUD  
@@ -29,9 +29,9 @@ A basic fleet management system where users can log in, manage vehicles, submit 
         - `Concerns/ApiResponse.php` – unified API responses
       - `Http/Requests/` – Form validation  
         - `VehicleRequest.php`, `LocationRequest.php`
-      - `Models/` – Eloquent models  
+      - `Models/`   
         - `User.php`, `Vehicle.php`, `GpsLocation.php`
-      - `Services/` – Business logic layer  
+      - `Services/` 
         - `VehicleService.php`, `GpsLocationService.php`, `DashboardService.php`
       - `Support/` – Helpers  
         - `Geo.php` – Haversine distance calculation
@@ -41,13 +41,13 @@ A basic fleet management system where users can log in, manage vehicles, submit 
       - `migrations/` – `users`, `vehicles`, `gps_locations`, jobs/cache  
       - `seeders/` – `UsersTableSeeder`, `VehiclesTableSeeder`, `GpsLocationsTableSeeder`
     - `config/` – app, auth, cors, database, queue, etc.
-    - `public/` – Laravel entry (`index.php`)
+    - `public/` 
     - `composer.json` – PHP dependencies
   - `frontend/` – **Next.js (App Router)**
     - `src/app/` – Routes & pages
       - `(app)/vehicles/` – Vehicle CRUD page
       - `(app)/dashboard/` – Distance table page
-      - `(app)/map/` – Map view (optional bonus)
+      - `(app)/map/` – Map view 
       - `login/`, `register/` – Auth screens
       - `layout.tsx`, `globals.css` – App shell & global styles
     - `src/components/` – UI components  
