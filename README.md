@@ -98,5 +98,29 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
+## API Endpoints
+> All protected requests require the header:  
+> `Authorization: Bearer <JWT token>`
 
+### Authentication Endpoints
+
+**Base URL:** `http://127.0.0.1:8000/api/auth`
+
+| Method | Endpoint            | Description                              |
+|-------:|---------------------|------------------------------------------|
+| POST   | `/register`         | Register a new user                      |
+| POST   | `/login`            | Authenticate user and get **JWT** token  |
+
+---
+
+### Vehicle Endpoints
+
+**Base URL:** `http://127.0.0.1:8000/api`
+
+| Method | Endpoint            | Description                                        |
+|-------:|---------------------|----------------------------------------------------|
+| GET    | `/vehicles`         | List vehicles (each includes `total_distance_km`)  |
+| POST   | `/vehicles`         | Create a vehicle (Requires JWT)                    |
+| PUT    | `/vehicles/:id`     | Update a vehicle (Requires JWT)                    |
+| DELETE | `/vehicles/:id`     | Delete a vehicle (Requires JWT)                    |
 
