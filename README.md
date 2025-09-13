@@ -16,21 +16,52 @@ A basic fleet management system where users can log in, manage vehicles, submit 
 - **Auth Storage:** Bearer token (Context/localStorage)
 
 ## Project Structure
+## Root Directory
 
-├─ backend/ # Laravel API
-│ ├─ app/ # Controllers, Models, Services, Requests
-│ ├─ routes/api.php # REST endpoints
-│ ├─ database/migrations # users, vehicles, gps_locations
-│ ├─ database/seeders # sample data
-│ ├─ composer.json
-│ └─ ...
-├─ frontend/ # Next.js app (App Router)
-│ ├─ src/app/(app)/vehicles # vehicle CRUD page
-│ ├─ src/app/(app)/dashboard # distance table
-│ ├─ src/app/(app)/map # map page (optional)
-│ ├─ src/app/login, register # auth screens
-│ └─ src/context/AuthContext.tsx
-└─ README.md
+- `/fleet-management`
+  - `backend/` – **Laravel API**
+    - `app/` – Application code
+      - `Http/Controllers/` – API controllers  
+        - `AuthController.php` – register/login (JWT)  
+        - `VehicleController.php` – vehicles CRUD  
+        - `GpsLocationController.php` – GPS points  
+        - `DashboardController.php` – totals/summary  
+        - `Concerns/ApiResponse.php` – unified API responses
+      - `Http/Requests/` – Form validation  
+        - `VehicleRequest.php`, `LocationRequest.php`
+      - `Models/` – Eloquent models  
+        - `User.php`, `Vehicle.php`, `GpsLocation.php`
+      - `Services/` – Business logic layer  
+        - `VehicleService.php`, `GpsLocationService.php`, `DashboardService.php`
+      - `Support/` – Helpers  
+        - `Geo.php` – Haversine distance calculation
+    - `routes/` – Routes definitions  
+      - `api.php` – REST endpoints
+    - `database/` – DB migrations & seeders  
+      - `migrations/` – `users`, `vehicles`, `gps_locations`, jobs/cache  
+      - `seeders/` – `UsersTableSeeder`, `VehiclesTableSeeder`, `GpsLocationsTableSeeder`
+    - `config/` – app, auth, cors, database, queue, etc.
+    - `public/` – Laravel entry (`index.php`)
+    - `composer.json` – PHP dependencies
+  - `frontend/` – **Next.js (App Router)**
+    - `src/app/` – Routes & pages
+      - `(app)/vehicles/` – Vehicle CRUD page
+      - `(app)/dashboard/` – Distance table page
+      - `(app)/map/` – Map view (optional bonus)
+      - `login/`, `register/` – Auth screens
+      - `layout.tsx`, `globals.css` – App shell & global styles
+    - `src/components/` – UI components  
+      - `AppShell.tsx`, `Nav.tsx`, `VehicleForm.tsx`, `ui/*`
+    - `src/context/` – State management  
+      - `AuthContext.tsx` – stores JWT & user state
+    - `src/lib/` – Utilities  
+      - `api.ts` – API client (uses `NEXT_PUBLIC_API_URL`)  
+      - `utils.ts`
+    - `public/` – static assets (icons/images)
+    - `package.json`, `package-lock.json` – JS deps & scripts
+  - `README.md` – How to run the project
+  - `.gitignore` – Ignore env/build/runtime files
+
 
 
 ## Setup & Installation
